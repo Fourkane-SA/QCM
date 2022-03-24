@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/materialicons.css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <script type="text/javascript" src="js/materialize.min.js" defer></script>
+    <meta charset="UTF-8" />
+    <title>LIFAP5 2019-2020 - Client</title>
+  </head>
+
+  <!-- Modal Structure -->
+  <body>
+    <header>
+      <nav class="nav-extended blue-grey lighten-1">
+        <div class="navbar-fixed">
+          <nav>
+            <div class="nav-wrapper blue-grey">
+              <a href="#!" class="brand-logo  center">Quizzz<i class="material-icons right">question_answer</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li>
+                  <form id="searchForm">
+                    <div class="input-field  blue-grey lighten-3">
+                      <input id="search" type="search" required />
+                      <label class="label-icon" onclick='surbillance(document.getElementById("search").value)' for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons">close</i>
+                    </div>
+                  </form>
+                </li>
+                <li>
+                  <i id="id-login" class="material-icons">lock</i>
+                </li>
+              </ul>
+            </div>
+            <!-- nav-wrapper  -->
+          </nav>
+        </div>
+        <!-- navbar-fixed -->
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent tabs-fixed-width">
+            <li class="tab">
+              <a class="active" href="#id-all-quizzes">Tous les quiz</a>
+            </li>
+            <li class="tab"><a href="#id-my-quizzes">Mes quiz</a></li>
+            <li class="tab"><a href="#id-my-answers" onclick="getUserAnswer()">Mes réponses</a></li>
+          </ul>
+        </div>
+        <!-- nav-content -->
+      </nav>
+      <!-- nav-extended -->
+    </header>
+
+    <main>
+      <div>
+        <!-- class="container" -->
+        <!-- Un premier onglet pour tous les quizzes-->
+        <div id="id-all-quizzes">
+          <div class="row">
+            <div class="col l4">
+              <div id="form-tri"></div>
+              <div id="id-all-quizzes-list"></div>
+            </div>
+            <div class="col l8">
+              <div id="id-all-quizzes-main"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Un second onglet pour ses propres quizzes-->
+        <div id="id-my-quizzes">
+          <div class="row">
+            <div class="col l4">
+              <div id="id-my-quizzes-list"></div>
+            </div>
+
+            <div class="col l4">
+              <div id="createQuizz">
+                <h5>Créer votre propre Quizz :</h5>
+
+                <form action="#" method="get" name="creerQcm" id="newQcm">
+                  Nom Quizz
+                  <input name="text" type="text" id="nomQcm"/>
+                  Description Quizz
+                  <input name="text" type="text" id="descQcm"/>
+                  Question
+                  <input name="text" type="text" id="Quest"/>
+                  Reponse 1:
+                  <input name="text" type="text" id="rep1"/>
+                  Reponse 2:
+                  <input name="text" type="text" id="rep2"/>
+                  Reponse 3:
+                  <input name="text" type="text" id="rep3"/>
+                  Reponse 4:
+                  <input name="text" type="text" id="rep4"/>
+
+                  <button class='btn waves-effect waves-light' type='submit'>Créer
+                    <i class='material-icons right'>send</i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- Un dernier onglet pour ses propres réponses-->
+        <div id="id-my-answers">
+          <div class="row">
+            <div class="col l4">
+              <div id="id-my-answers-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <footer class="page-footer grey darken-1">
+      <div class="footer-copyright">
+        <div class="container">
+          CC BY-NC-SA 3.0 FR
+          <a class="grey-text text-lighten-4 right" href="https://lifap5.univ-lyon1.fr/">lifap5.univ-lyon1.fr</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- l'ordre compte dans les scripts : ils sont lues puis interprétés DANS L'ORDRE -->
+    <script type="text/javascript" src="js/websocket.js" defer></script>
+    <script type="text/javascript" src="js/modeles.js" defer></script>
+    <script type="text/javascript" src="js/vues.js" defer></script>
+    <script type="text/javascript" src="js/app.js" defer></script>
+  </body>
+</html>
